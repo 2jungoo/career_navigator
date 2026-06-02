@@ -1,0 +1,567 @@
+export const EVALUATION_DATASET = [
+  {
+    id: 'eng-1',
+    label: 'engineering',
+    source: 'synthetic_resume',
+    text: 'React와 TypeScript로 프론트엔드 화면을 구현하고 REST API 연동, 테스트 코드 작성, 코드 리뷰를 수행했습니다.',
+  },
+  {
+    id: 'eng-2',
+    label: 'engineering',
+    source: 'synthetic_resume',
+    text: 'Docker 기반 백엔드 서버를 배포하고 Node API, 데이터베이스 설계, CI/CD 자동화를 개선했습니다.',
+  },
+  {
+    id: 'data-1',
+    label: 'data',
+    source: 'synthetic_resume',
+    text: 'SQL과 BigQuery로 고객 데이터를 전처리하고 Tableau 대시보드와 KPI 리포트를 만들어 인사이트를 도출했습니다.',
+  },
+  {
+    id: 'data-2',
+    label: 'data',
+    source: 'synthetic_resume',
+    text: 'A/B 테스트 결과를 회귀 분석으로 검증하고 퍼널 지표와 세그먼트별 전환율을 분석했습니다.',
+  },
+  {
+    id: 'planning-1',
+    label: 'planning',
+    source: 'synthetic_resume',
+    text: '서비스 기획자로서 사용자 인터뷰, 요구사항 정리, 로드맵 수립, 화면 정책 정의를 담당했습니다.',
+  },
+  {
+    id: 'planning-2',
+    label: 'planning',
+    source: 'synthetic_resume',
+    text: 'MVP 범위를 정하고 와이어프레임과 우선순위를 설계해 제품 전략과 UX 리서치를 연결했습니다.',
+  },
+  {
+    id: 'research-1',
+    label: 'research',
+    source: 'synthetic_resume',
+    text: '자연어처리 연구에서 BERT 문장 분류 모델을 파인튜닝하고 평가 지표와 베이스라인을 비교했습니다.',
+  },
+  {
+    id: 'research-2',
+    label: 'research',
+    source: 'synthetic_resume',
+    text: '선행 연구를 조사하고 가설을 세운 뒤 실험 설계, 어노테이션, 재현 실험을 통해 논문 결과를 검증했습니다.',
+  },
+  {
+    id: 'management-1',
+    label: 'management',
+    source: 'synthetic_resume',
+    text: '팀 리드로서 스프린트 일정 관리, 리스크 관리, 이해관계자 조율, OKR 기반 목표 관리를 수행했습니다.',
+  },
+  {
+    id: 'management-2',
+    label: 'management',
+    source: 'synthetic_resume',
+    text: '신규 구성원 온보딩과 멘토링을 운영하고 의사결정 프로세스와 협력사 커뮤니케이션을 개선했습니다.',
+  },
+  {
+    id: 'public-1',
+    label: 'public_admin',
+    source: 'synthetic_resume',
+    text: '지방자치 정책분석 프로젝트에서 조례, 예산, 행정절차, 민원 데이터를 검토해 공공서비스 개선안을 작성했습니다.',
+  },
+  {
+    id: 'public-2',
+    label: 'public_admin',
+    source: 'synthetic_resume',
+    text: '공공기관 인턴으로 법령과 규정을 검토하고 중앙부처 보고자료와 복지행정 사업 자료를 정리했습니다.',
+  },
+  {
+    id: 'econ-1',
+    label: 'economics',
+    source: 'synthetic_resume',
+    text: '거시경제 지표와 금리, 환율, 인플레이션 데이터를 분석해 채권 포트폴리오 리스크를 평가했습니다.',
+  },
+  {
+    id: 'econ-2',
+    label: 'economics',
+    source: 'synthetic_resume',
+    text: '계량경제 모형으로 GDP와 경기 변동을 추정하고 통화정책 변화가 금융시장에 미치는 영향을 분석했습니다.',
+  },
+  {
+    id: 'biz-1',
+    label: 'business',
+    source: 'synthetic_resume',
+    text: 'CRM 데이터를 활용해 고객관리 전략을 세우고 브랜드 마케팅, 광고 성과, 영업 지표를 개선했습니다.',
+  },
+  {
+    id: 'biz-2',
+    label: 'business',
+    source: 'synthetic_resume',
+    text: 'ERP와 회계 자료를 바탕으로 공급망 비용, 사업계획, 수익성을 분석해 경영전략 보고서를 작성했습니다.',
+  },
+  {
+    id: 'health-1',
+    label: 'nursing_health',
+    source: 'synthetic_resume',
+    text: '간호 실습에서 환자 활력징후, 간호기록, 처치 과정을 관리하고 감염관리 교육을 수행했습니다.',
+  },
+  {
+    id: 'health-2',
+    label: 'nursing_health',
+    source: 'synthetic_resume',
+    text: '공중보건 프로젝트에서 예방접종, 건강증진, 보건교육, 케이스스터디 자료를 분석했습니다.',
+  },
+  {
+    id: 'science-1',
+    label: 'natural_science',
+    source: 'synthetic_resume',
+    text: '선형대수, 미분방정식, 확률론을 활용해 물리 실험 데이터를 해석하고 수치해석 코드를 작성했습니다.',
+  },
+  {
+    id: 'science-2',
+    label: 'natural_science',
+    source: 'synthetic_resume',
+    text: '분자생물학 실험에서 세포생물학, 유전학, 생화학 이론을 바탕으로 자연과학 연구를 수행했습니다.',
+  },
+  {
+    id: 'human-1',
+    label: 'humanities',
+    source: 'synthetic_resume',
+    text: '사회학 연구에서 인터뷰 자료와 문화 텍스트를 분석하고 교육학, 심리학 관점의 문헌을 검토했습니다.',
+  },
+  {
+    id: 'human-2',
+    label: 'humanities',
+    source: 'synthetic_resume',
+    text: '국제관계와 정치학 수업에서 역사 자료, 철학 논문, 사회정책 사례를 비교 분석했습니다.',
+  },
+  {
+    id: 'art-1',
+    label: 'arts_design',
+    source: 'synthetic_resume',
+    text: '그래픽디자인 포트폴리오에서 브랜딩 디자인, 일러스트, 편집디자인, 시각디자인 작업을 진행했습니다.',
+  },
+  {
+    id: 'art-2',
+    label: 'arts_design',
+    source: 'synthetic_resume',
+    text: '전시 기획과 영상 편집 프로젝트에서 아트디렉션, 애니메이션, 3D 모델링 결과물을 제작했습니다.',
+  },
+  {
+    id: 'none-1',
+    label: 'insufficient',
+    source: 'negative_control',
+    text: '저는 주말에 산책과 독서를 좋아하고 친구들과 대화하는 시간을 소중하게 생각합니다.',
+  },
+  {
+    id: 'none-2',
+    label: 'insufficient',
+    source: 'negative_control',
+    text: '매일 성실하게 생활하며 새로운 환경에 적응하려고 노력했습니다.',
+  },
+  {
+    id: 'stress-planning-1',
+    label: 'planning',
+    source: 'stress_test',
+    text: '사용자 로그를 SQL로 분석해 KPI 대시보드를 만들고, 그 결과를 바탕으로 서비스 로드맵과 MVP 우선순위를 정했습니다.',
+  },
+  {
+    id: 'stress-business-1',
+    label: 'business',
+    source: 'stress_test',
+    text: '광고 캠페인의 A/B 테스트와 전환율 데이터를 분석해 CRM 세그먼트별 브랜드 마케팅 전략을 제안했습니다.',
+  },
+  {
+    id: 'stress-humanities-1',
+    label: 'humanities',
+    source: 'stress_test',
+    text: '사회정책 사례를 회귀 분석과 인터뷰 자료로 함께 검토하고, 교육학과 사회학 문헌을 바탕으로 해석했습니다.',
+  },
+  {
+    id: 'stress-research-1',
+    label: 'research',
+    source: 'stress_test',
+    text: 'Python으로 논문 데이터를 전처리하고 대시보드를 만들어 실험 결과와 베이스라인 성능을 비교했습니다.',
+  },
+  {
+    id: 'stress-public-1',
+    label: 'public_admin',
+    source: 'stress_test',
+    text: '공공기관 예산 자료와 KPI를 분석해 행정절차 개선안을 만들고 중앙부처 보고용 대시보드를 작성했습니다.',
+  },
+  {
+    id: 'gap-planning-1',
+    label: 'planning',
+    source: 'lexical_gap',
+    text: '고객이 어디에서 불편을 느끼는지 정리하고 다음 출시에서 무엇을 먼저 만들지 팀과 합의했습니다.',
+  },
+  {
+    id: 'gap-business-1',
+    label: 'business',
+    source: 'lexical_gap',
+    text: '매출이 줄어든 이유를 찾기 위해 고객군별 반응을 비교하고 메시지와 판매 방식을 바꾸었습니다.',
+  },
+  {
+    id: 'gap-public-1',
+    label: 'public_admin',
+    source: 'lexical_gap',
+    text: '지역 주민 의견을 모아 불편 사항을 정리하고 담당 부서가 처리할 수 있는 개선안을 제안했습니다.',
+  },
+  {
+    id: 'gap-humanities-1',
+    label: 'humanities',
+    source: 'lexical_gap',
+    text: '사람들이 특정 사건을 어떻게 기억하고 말하는지 기록을 읽고 인터뷰 내용을 해석했습니다.',
+  },
+  {
+    id: 'gap-health-1',
+    label: 'nursing_health',
+    source: 'lexical_gap',
+    text: '대상자의 상태 변화를 살피고 보호자에게 생활 습관과 회복 과정에서 주의할 점을 설명했습니다.',
+  },
+
+  /* ── 확장 평가셋 (도메인당 1~2개 추가) ── */
+
+  // engineering 추가
+  {
+    id: 'eng-3',
+    label: 'engineering',
+    source: 'synthetic_resume',
+    text: 'Python과 FastAPI로 마이크로서비스를 설계하고 Kubernetes 클러스터에 배포하며 Prometheus 기반 모니터링을 구축했습니다.',
+  },
+  {
+    id: 'eng-4',
+    label: 'engineering',
+    source: 'stress_test',
+    text: '팀 내 코드 리뷰 문화를 정착시키고 단위 테스트 커버리지를 40%에서 80%로 올렸으며 CI/CD 파이프라인을 재설계했습니다.',
+  },
+
+  // data 추가
+  {
+    id: 'data-3',
+    label: 'data',
+    source: 'synthetic_resume',
+    text: 'Spark와 Airflow로 일일 ETL 파이프라인을 운영하고 Feature Store를 구축해 ML 모델 학습 시간을 50% 단축했습니다.',
+  },
+  {
+    id: 'data-4',
+    label: 'data',
+    source: 'lexical_gap',
+    text: '사용자 이탈률이 높은 구간을 퍼널 분석으로 찾아내고 어떤 기능이 문제인지 로그 데이터로 근거를 만들었습니다.',
+  },
+
+  // planning 추가
+  {
+    id: 'planning-3',
+    label: 'planning',
+    source: 'synthetic_resume',
+    text: '월간 능동 사용자 지표를 팀 전체 목표로 설정하고 기능별 기여도를 측정할 이벤트 로깅 정책을 기획했습니다.',
+  },
+
+  // research 추가
+  {
+    id: 'research-3',
+    label: 'research',
+    source: 'synthetic_resume',
+    text: '한국어 감성 분석 데이터셋을 직접 구축하고 KoBERT를 파인튜닝해 기존 베이스라인 대비 F1 +4.2p 향상을 달성했습니다.',
+  },
+
+  // management 추가
+  {
+    id: 'management-3',
+    label: 'management',
+    source: 'synthetic_resume',
+    text: '6개 팀에 걸친 대형 프로젝트에서 PMO 역할을 맡아 주간 진척 보고 체계를 수립하고 이슈 에스컬레이션 프로세스를 설계했습니다.',
+  },
+
+  // public_admin 추가
+  {
+    id: 'public-3',
+    label: 'public_admin',
+    source: 'synthetic_resume',
+    text: '지방자치단체 복지 예산 집행 실태를 분석하고 효율화 방안을 담은 정책 보고서를 작성해 부서 내 제도 개선에 반영했습니다.',
+  },
+
+  // economics 추가
+  {
+    id: 'econ-3',
+    label: 'economics',
+    source: 'synthetic_resume',
+    text: '글로벌 금리 인상 사이클을 시계열 모형으로 분석하고 국내 채권 시장에 미치는 파급 효과를 투자 보고서로 정리했습니다.',
+  },
+
+  // business 추가
+  {
+    id: 'biz-3',
+    label: 'business',
+    source: 'synthetic_resume',
+    text: '신규 시장 진출을 위한 경쟁사 벤치마킹을 수행하고 사업계획서와 수익성 시뮬레이션을 작성해 경영진 의사결정을 지원했습니다.',
+  },
+
+  // nursing_health 추가
+  {
+    id: 'health-3',
+    label: 'nursing_health',
+    source: 'synthetic_resume',
+    text: '당뇨 환자 대상 자가 관리 교육 프로그램을 기획하고 혈당 모니터링 결과를 분석해 맞춤형 식이 지도를 수행했습니다.',
+  },
+
+  // natural_science 추가
+  {
+    id: 'science-3',
+    label: 'natural_science',
+    source: 'synthetic_resume',
+    text: '양자화학 계산으로 반응 경로를 시뮬레이션하고 실험값과 비교해 반응 메커니즘에 대한 새로운 가설을 제시했습니다.',
+  },
+
+  // humanities 추가
+  {
+    id: 'human-3',
+    label: 'humanities',
+    source: 'synthetic_resume',
+    text: '식민지 시기 한국 문학 작품에 나타난 저항 담론을 담론 분석 방법론으로 분석하고 학술지에 논문을 투고했습니다.',
+  },
+
+  // arts_design 추가
+  {
+    id: 'art-3',
+    label: 'arts_design',
+    source: 'synthetic_resume',
+    text: '브랜드 아이덴티티 디자인 프로젝트에서 로고, 컬러 팔레트, 타이포그래피 가이드라인을 제작하고 브랜드 북을 완성했습니다.',
+  },
+
+  // negative_control 추가
+  {
+    id: 'none-3',
+    label: 'insufficient',
+    source: 'negative_control',
+    text: '오늘 날씨가 좋아서 공원에서 산책을 했습니다. 바람이 시원하고 기분이 좋았습니다.',
+  },
+  {
+    id: 'none-4',
+    label: 'insufficient',
+    source: 'negative_control',
+    text: '저는 음식 먹는 것을 좋아하고 특히 한식을 즐깁니다. 요리도 가끔 합니다.',
+  },
+  // manufacturing (제조·생산)
+  {
+    id: 'mfg-1',
+    label: 'manufacturing',
+    source: 'synthetic_resume',
+    text: '산업공학을 전공하며 제조 공정 데이터를 분석해 수율을 95%까지 향상시켰고 라인 밸런싱과 품질관리(QC) 체크리스트를 개선했습니다.',
+  },
+  {
+    id: 'mfg-2',
+    label: 'manufacturing',
+    source: 'synthetic_resume',
+    text: 'SK하이닉스 인턴에서 반도체 웨이퍼 공정 이상을 SPC 차트로 탐지하고 불량 원인을 분석해 수율 개선 보고서를 작성했습니다.',
+  },
+  {
+    id: 'mfg-3',
+    label: 'manufacturing',
+    source: 'synthetic_resume',
+    text: '삼성디스플레이 연구개발 직무에서 패널 양산 공정의 클린룸 환경을 관리하고 FMEA를 활용해 설비 불량률을 낮추는 프로젝트를 수행했습니다.',
+  },
+  {
+    id: 'mfg-4',
+    label: 'manufacturing',
+    source: 'synthetic_resume',
+    text: 'LG전자 생산기술원 인턴으로 협동 로봇 도입을 통한 제조 자동화 라인 설계에 참여하고 스마트팩토리 MES 데이터를 분석했습니다.',
+  },
+  // energy_plant (에너지·발전)
+  {
+    id: 'energy-1',
+    label: 'energy_plant',
+    source: 'synthetic_resume',
+    text: '한전KPS 인턴에서 발전설비 정비 매뉴얼을 학습하고 변압기·발전기 점검 절차와 신재생에너지 발전 비중에 대한 보고서를 작성했습니다.',
+  },
+  {
+    id: 'energy-2',
+    label: 'energy_plant',
+    source: 'synthetic_resume',
+    text: '원자력공학을 전공하며 PWR 원자로 냉각계통 열수력 해석 실습을 수행하고 원전 안전 규정과 한수원 정비 기준을 학습했습니다.',
+  },
+  {
+    id: 'energy-3',
+    label: 'energy_plant',
+    source: 'synthetic_resume',
+    text: '한국전력공사 화학엔지니어 직무에 지원하여 발전소 수처리 설비와 환경 규제 대응, 탄소중립 목표에 따른 신재생에너지 연계 방안을 연구했습니다.',
+  },
+  {
+    id: 'energy-4',
+    label: 'energy_plant',
+    source: 'synthetic_resume',
+    text: '태양광·풍력 발전 계통 연계 프로젝트에 참여해 전력계통 안정성을 분석하고 에너지 저장장치(ESS) 운영 데이터를 처리했습니다.',
+  },
+  // aerospace (항공·우주)
+  {
+    id: 'aero-1',
+    label: 'aerospace',
+    source: 'synthetic_resume',
+    text: '전자공학을 전공하며 항공기 전기·전자 계통과 정비 교범을 학습하고 대한항공 인턴에서 기재별 기술 지시 이행 절차를 수행했습니다.',
+  },
+  {
+    id: 'aero-2',
+    label: 'aerospace',
+    source: 'synthetic_resume',
+    text: 'KARI 인턴십에서 저궤도 위성 지상국 관제 로그를 분석하고 TT&C 운영 절차와 위성 통신 링크 품질 지표를 정리했습니다.',
+  },
+  {
+    id: 'aero-3',
+    label: 'aerospace',
+    source: 'synthetic_resume',
+    text: '항공우주공학과에서 비행 제어 시스템 설계 과목을 이수하고 감항 인증 절차와 항공역학 시뮬레이션 실습을 수행했습니다.',
+  },
+  {
+    id: 'aero-4',
+    label: 'aerospace',
+    source: 'synthetic_resume',
+    text: 'KTsat 위성 운영 인턴으로 정지궤도 위성의 지상국 시스템을 모니터링하고 위성 텔레메트리 데이터 이상 여부를 점검했습니다.',
+  },
+  // media_content (미디어·콘텐츠)
+  {
+    id: 'media-1',
+    label: 'media_content',
+    source: 'synthetic_resume',
+    text: '디지털 뉴스룸 인턴으로 SNS 콘텐츠 기획과 영상 편집을 담당하며 헤드라인 카피를 작성하고 독자 반응 지표를 분석했습니다.',
+  },
+  {
+    id: 'media-2',
+    label: 'media_content',
+    source: 'synthetic_resume',
+    text: '중앙일보 콘텐츠 기획 직무에 지원하여 디지털 저널리즘 환경에서 기사 큐레이션과 소셜미디어 채널 운영 경험을 쌓았습니다.',
+  },
+  {
+    id: 'media-3',
+    label: 'media_content',
+    source: 'synthetic_resume',
+    text: '언론학을 전공하며 데이터 저널리즘 프로젝트에서 공공데이터를 분석해 인터랙티브 뉴스 기사를 제작하고 취재 보도 실습을 수행했습니다.',
+  },
+  {
+    id: 'media-4',
+    label: 'media_content',
+    source: 'synthetic_resume',
+    text: '유튜브 채널 운영과 영상 제작 경험을 바탕으로 뉴미디어 콘텐츠 PD 직무를 지원하며 숏폼 기획과 SNS 알고리즘 분석을 학습했습니다.',
+  },
+
+  /* ── 도메인 균형 보강 (모든 직무 도메인 5개로 통일) ──
+     PDF 홀드아웃이 커버하지 못하는 6개 도메인(data/planning/research/management/
+     economics/arts_design)에는 의미로만 판단해야 하는 lexical_gap·stress_test를
+     우선 배치해 평가 난도와 커버리지를 함께 높였다. */
+
+  // engineering 3→ (4→5)
+  {
+    id: 'eng-5',
+    label: 'engineering',
+    source: 'synthetic_resume',
+    text: 'Go 언어로 대용량 트래픽 처리 백엔드를 개발하고 Redis 캐싱과 메시지 큐를 도입해 평균 응답 지연을 60% 줄였습니다.',
+  },
+
+  // data (4→5) — lexical_gap
+  {
+    id: 'data-5',
+    label: 'data',
+    source: 'lexical_gap',
+    text: '숫자만 봐서는 보이지 않던 문제를 여러 지표를 엮어 들여다보고, 어떤 사용자 무리에서 반응이 갈리는지 근거를 정리해 공유했습니다.',
+  },
+
+  // research (4→5) — stress_test (research + engineering 혼재)
+  {
+    id: 'research-4',
+    label: 'research',
+    source: 'stress_test',
+    text: 'PyTorch로 이미지 분류 모델을 학습시키고 실험 로그를 자동 수집하는 파이프라인을 구축해 베이스라인 대비 정확도 향상을 재현 검증했습니다.',
+  },
+
+  // management (3→5) — synthetic + lexical_gap
+  {
+    id: 'management-4',
+    label: 'management',
+    source: 'synthetic_resume',
+    text: '부서 간 협업이 막히던 프로젝트에서 역할과 책임(RACI)을 정리하고 주간 의사결정 회의를 운영해 일정 지연 리스크를 사전에 관리했습니다.',
+  },
+  {
+    id: 'management-5',
+    label: 'management',
+    source: 'lexical_gap',
+    text: '서로 다른 팀이 같은 목표를 보도록 우선순위를 합의하고, 진행이 늦어지는 부분을 미리 찾아 누가 맡을지 정했습니다.',
+  },
+
+  // economics (3→5) — synthetic + stress_test (economics + data 혼재)
+  {
+    id: 'econ-4',
+    label: 'economics',
+    source: 'synthetic_resume',
+    text: '패널 데이터로 최저임금 인상이 고용에 미친 효과를 회귀분석하고 정책 시사점을 담은 경제 분석 리포트를 작성했습니다.',
+  },
+  {
+    id: 'econ-5',
+    label: 'economics',
+    source: 'stress_test',
+    text: '거시 지표 시계열을 SQL로 추출해 대시보드로 시각화하고 금리와 환율 변동이 소비 지표에 미치는 영향을 계량 모형으로 추정했습니다.',
+  },
+
+  // natural_science (3→5) — synthetic + lexical_gap
+  {
+    id: 'science-4',
+    label: 'natural_science',
+    source: 'synthetic_resume',
+    text: '천체관측 데이터를 분석해 변광성의 광도 곡선을 추정하고 통계적 주기 분석으로 항성의 물리 특성을 해석했습니다.',
+  },
+  {
+    id: 'science-5',
+    label: 'natural_science',
+    source: 'lexical_gap',
+    text: '실험에서 얻은 측정값이 이론값과 왜 차이가 나는지 오차 원인을 하나씩 따져보고 재현 실험으로 가설을 확인했습니다.',
+  },
+
+  // arts_design (3→5) — synthetic + lexical_gap
+  {
+    id: 'art-4',
+    label: 'arts_design',
+    source: 'synthetic_resume',
+    text: 'UX/UI 디자인 프로젝트에서 Figma로 디자인 시스템과 프로토타입을 제작하고 사용성 테스트를 거쳐 인터랙션을 다듬었습니다.',
+  },
+  {
+    id: 'art-5',
+    label: 'arts_design',
+    source: 'lexical_gap',
+    text: '보는 사람이 한눈에 메시지를 느끼도록 색과 여백, 글자 크기를 조절하며 시안을 여러 번 고쳐 완성도를 높였습니다.',
+  },
+
+  // nursing_health (4→5) — lexical_gap
+  {
+    id: 'health-4',
+    label: 'nursing_health',
+    source: 'lexical_gap',
+    text: '환자가 불안해하지 않도록 상태를 쉬운 말로 설명하고, 회복을 위해 매일 살펴야 할 것들을 보호자와 함께 점검했습니다.',
+  },
+
+  // manufacturing (4→5)
+  {
+    id: 'mfg-5',
+    label: 'manufacturing',
+    source: 'synthetic_resume',
+    text: '자동차 부품 생산라인에서 택트타임을 분석하고 작업 표준서를 개선해 시간당 생산량을 12% 높였습니다.',
+  },
+
+  // energy_plant (4→5)
+  {
+    id: 'energy-5',
+    label: 'energy_plant',
+    source: 'synthetic_resume',
+    text: '열병합 발전소 보일러 효율 데이터를 분석하고 연소 최적화와 배기가스 저감 방안을 설비 점검 보고서로 정리했습니다.',
+  },
+
+  // aerospace (4→5)
+  {
+    id: 'aero-5',
+    label: 'aerospace',
+    source: 'synthetic_resume',
+    text: '무인기 비행제어 알고리즘을 시뮬레이션하고 풍동 시험 데이터를 바탕으로 공력 안정성을 검증하는 연구를 수행했습니다.',
+  },
+
+  // media_content (4→5)
+  {
+    id: 'media-5',
+    label: 'media_content',
+    source: 'synthetic_resume',
+    text: 'OTT 플랫폼 콘텐츠 마케팅 인턴으로 시청 데이터를 분석해 추천 배너를 기획하고 예고편 숏폼의 조회수 반응을 측정했습니다.',
+  },
+];

@@ -1,0 +1,30 @@
+{
+  "evalOnly": {
+    "logreg": {
+      "accuracy": 0.7976,
+      "macroF1": 0.7864
+    },
+    "mlp": {
+      "accuracy": 0.6786,
+      "macroF1": 0.6766
+    }
+  },
+  "realDataEffect": {
+    "evalAccEvalOnly": 0.7976,
+    "evalAccWithPdf": 0.7738,
+    "pdfItemAcc": 0.3333,
+    "combinedAcc": 0.6579,
+    "combinedSize": 114,
+    "helped": false
+  },
+  "deploy": {
+    "model": "LogReg",
+    "trainedOn": "eval",
+    "C": 0.0316,
+    "size": 84
+  },
+  "evalSize": 84,
+  "pdfSize": 30,
+  "cosineRef": 0.971,
+  "note": "배포 헤드는 브라우저 선형 추론(W·x+b)과의 호환을 위해 LogReg 고정. MLP는 알고리즘 비교 전용. 실데이터(PDF)는 평가셋 정확도가 오를 때만 학습에 포함."
+}
