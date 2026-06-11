@@ -429,36 +429,52 @@ export async function runRealDataHoldout() {
   };
 }
 
+/** 시드 고정 PRNG (mulberry32) — 부트스트랩 CI 재현성 확보용 */
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function () {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 /**
  * 부트스트랩 복원추출로 accuracy와 macroF1의 95% 신뢰구간을 추정한다.
  * 분류기는 학습이 없는 결정적 추론이므로 k-fold CV 대신 부트스트랩 CI가 적합.
  *
  * @param {Array<{correct: boolean, label: string, predicted: string}>} predictions
- * @param {{ iterations?: number, alpha?: number }} options
+ * @param {{ iterations?: number, alpha?: number, seed?: number }} options
  * @returns {{ accuracy: {mean,lo,hi}, macroF1: {mean,lo,hi} }}
  */
-export function bootstrapMetricCI(predictions, { iterations = 2000, alpha = 0.05 } = {}) {
+export function bootstrapMetricCI(predictions, { iterations = 2000, alpha = 0.05, seed = 42 } = {}) {
   const n = predictions.length;
   const accSamples = [];
   const f1Samples = [];
+  const rand = mulberry32(seed);
+  // 라벨셋은 전체 predictions 기준으로 고정 — 샘플마다 변하면 macro 평균 분모가 흔들림
+  const allLabels = [...new Set(predictions.flatMap((p) => [p.label, p.predicted]))];
 
   for (let i = 0; i < iterations; i++) {
     // 복원추출
-    const sample = Array.from({ length: n }, () => predictions[Math.floor(Math.random() * n)]);
+    const sample = Array.from({ length: n }, () => predictions[Math.floor(rand() * n)]);
 
     const correctCount = sample.filter((p) => p.correct).length;
     accSamples.push(correctCount / n);
 
-    // per-class F1 for macro
-    const labels = [...new Set(sample.map((p) => p.label))];
-    const classF1s = labels.map((label) => {
-      const tp = sample.filter((p) => p.label === label && p.predicted === label).length;
-      const fp = sample.filter((p) => p.label !== label && p.predicted === label).length;
-      const fn = sample.filter((p) => p.label === label && p.predicted !== label).length;
-      const precision = tp + fp === 0 ? 0 : tp / (tp + fp);
-      const recall = tp + fn === 0 ? 0 : tp / (tp + fn);
-      return precision + recall === 0 ? 0 : (2 * precision * recall) / (precision + recall);
-    });
+    // per-class F1 for macro (샘플에 전혀 등장하지 않은 클래스는 평균에서 제외)
+    const classF1s = allLabels
+      .map((label) => {
+        const tp = sample.filter((p) => p.label === label && p.predicted === label).length;
+        const fp = sample.filter((p) => p.label !== label && p.predicted === label).length;
+        const fn = sample.filter((p) => p.label === label && p.predicted !== label).length;
+        if (tp + fp + fn === 0) return null;
+        const precision = tp + fp === 0 ? 0 : tp / (tp + fp);
+        const recall = tp + fn === 0 ? 0 : tp / (tp + fn);
+        return precision + recall === 0 ? 0 : (2 * precision * recall) / (precision + recall);
+      })
+      .filter((v) => v !== null);
     f1Samples.push(classF1s.reduce((s, v) => s + v, 0) / (classF1s.length || 1));
   }
 

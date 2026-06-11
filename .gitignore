@@ -19,6 +19,9 @@ public/data/pdf_corpus.json
 # Claude Code 로컬 설정
 .claude/
 
+# MS Office 임시 잠금 파일
+~$*
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
