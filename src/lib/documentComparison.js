@@ -12,6 +12,19 @@ const TOP_NGRAMS = 15;
 const SENTENCE_MATCH_THRESHOLD = 0.25;
 
 /**
+ * 공통 키워드 표시용 한국어 어미·조사 불용어.
+ * BoN은 음절 n-gram을 쓰므로 "습니다/니다/습니" 같은 서술어미 조각이
+ * 모든 문서 쌍에서 공통으로 잡힌다. 도메인 어휘만 남기기 위해 표시에서 제외.
+ */
+const NGRAM_STOPWORDS = new Set([
+  '습니다', '습니', '니다', '합니다', '합니', '했습니다', '했습', '였습니다', '였습',
+  '있습니다', '있습', '입니다', '됩니다', '됩니', '하였', '하여', '하고', '하는', '하며',
+  '있는', '있고', '있었', '으로', '에서', '에게', '으며', '으면', '면서', '대한', '통해',
+  '위해', '저는', '제가', '저의', '그리고', '또한', '같은', '다는', '라는', '으나',
+  '되었습니다', '되었', '되어', '이러한', '그러한', '대해', '에는', '에도',
+]);
+
+/**
  * 두 문서의 공통 n-gram top-N을 반환한다.
  * 공통 교집합 키를 weightA × weightB 기준으로 정렬.
  */
@@ -21,6 +34,7 @@ function extractCommonNgrams(vecA, vecB) {
     const weightB = vecB.get(key);
     if (weightB) {
       const token = key.replace(/^(tok|ng):/, '');
+      if (NGRAM_STOPWORDS.has(token) || /^[0-9]+$/.test(token)) return;
       const score = weightA * weightB;
       if (!seen.has(token) || seen.get(token).score < score) {
         seen.set(token, { token, score });

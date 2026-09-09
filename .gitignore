@@ -16,6 +16,11 @@ dist-ssr
 자소서/
 public/data/pdf_corpus.json
 
+# 발표 영상, 타 팀 제출물 — 용량 문제로 커밋 제외
+*.mp4
+5조_자연어처리/
+5조_자연어처리.zip
+
 # Claude Code 로컬 설정
 .claude/
 
